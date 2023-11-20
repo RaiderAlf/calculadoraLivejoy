@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    background-color: rgb(217, 217, 217);
+    font-family: 'Roboto', sans-serif;
+}
+
+#buttonsPad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.button {
+    border-radius: 25px;
+    border: 1px transparent solid;
+    font-size: large;
+    background-color: rgb(213, 213, 213);
+}
+
+.button:active,
+.del:active,
+.equal:active {
+    background-color: rgb(72, 72, 72);
+    color: white;
+}
+
+.del,
+.equal {
+    border-radius: 10px;
+    border: 1px transparent solid;
+    font-size: large;
+    background-color: rgb(145, 145, 145);
+}
+
+#screens {
+    display: flex;
+    flex-direction: column;
+    height: 10vh;
+    background: linear-gradient(to bottom, pink, rgb(217, 217, 217));
+    gap: 2rem;
+    padding: 2rem;
+}
