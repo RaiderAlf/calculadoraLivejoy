@@ -17,5 +17,6 @@ borrar.onclick = function (e) {
 };
 
 equal.onclick = function (e) {
-    result.textContent = 'Total= ' + Math.round(screen.innerHTML / 769) + ' $';
+    let results = screen.innerHTML / 769;
+    result.textContent = 'Total= ' + results.toFixed(2) + ' $';
 };
