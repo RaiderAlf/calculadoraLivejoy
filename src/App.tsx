@@ -15,7 +15,7 @@ const App: React.FC = () => {
   const [display, setDisplay] = useState('');
 
   const handleClick = (value: string) => {
-    if (value === '=') {
+    if (value === '==') {
       try {
         setDisplay('$ ' + (parseFloat(display) / 768).toFixed(2).toString());
       } catch {
@@ -50,10 +50,10 @@ const App: React.FC = () => {
           ))}
         </div>
         <div>
-          {['0', '='].map((value) => (
+          <Button value="Del" onClick={handleClick} />
+          {['0', '=='].map((value) => (
             <Button key={value} value={value} onClick={handleClick} />
           ))}
-          <Button value="Del" onClick={handleClick} />
         </div>
       </div>
     </div>
