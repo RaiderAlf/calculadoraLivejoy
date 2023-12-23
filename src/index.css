@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 0, 0.6), rgba(0, 0, 255, 0.7)), url('./assets/bg-image.png');
+    background-position: center;
+}
+
+.display-led {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-size: 36px;
+}
