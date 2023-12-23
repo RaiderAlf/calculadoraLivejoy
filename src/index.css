@@ -6,7 +6,7 @@ body {
     display: grid;
     place-content: center;
     height: 100vh;
-    background-image: linear-gradient(to bottom, #C472FF00,#FF79E600), url('./assets/bg-image.png');
+    background-image: linear-gradient(to bottom, #C472FF88,#FF79E688), url('./assets/bg-image.png');
     background-position: center;
 }
 
