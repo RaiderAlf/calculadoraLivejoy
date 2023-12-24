@@ -1,5 +1,5 @@
 //DEPENDENCIES
-import { useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 import './App.css'
 
 type ButtonProps = {
@@ -13,6 +13,15 @@ const Button: React.FC<ButtonProps> = ({ value, onClick }) => (
 
 const App: React.FC = () => {
   const [display, setDisplay] = useState('');
+  const [meta, setMeta] = useState('')
+
+  const handlerMeta = (e: ChangeEvent<HTMLInputElement>) => {
+    setMeta(e.target.value)
+  }
+
+  const handlerDelMeta = () => {
+    setMeta('')
+  }
 
   const handleClick = (value: string) => {
     if (value === '=') {
@@ -30,6 +39,7 @@ const App: React.FC = () => {
 
   return (
     <div className='flex flex-col gap-6 bg-pink-200/40 px-4 py-8 rounded-xl [box-shadow:_0_0_15px_rgb(0_0_0_)] backdrop-filter backdrop-blur-sm'>
+
       <div >
         <input disabled className="display-led backdrop-filter text-gray-200 backdrop-blur-xl text-center w-full h-full bg-black/70 font-medium outline outline-0 border-2 text-sm px-3 py-3 rounded-[25px] border-purple-500 [box-shadow:inset_0_0_5px_rgb(0_0_0_/_70%)]" placeholder='CANTIDAD DE MONEDAS' type="text" value={display} />
       </div>
@@ -57,6 +67,10 @@ const App: React.FC = () => {
         <Button value="BORRAR" onClick={handleClick} />
         <div>
         </div>
+      </div>
+      <div>
+        <input type="text" onChange={handlerMeta} className="display-led backdrop-filter text-gray-700 backdrop-blur-xl text-center w-full h-full bg-white font-medium outline outline-0 border-2 text-sm px-3 py-3 rounded-[25px] border-red-500 [box-shadow:inset_0_0_5px_rgb(0_0_0_/_70%)]" placeholder='META DE SESION' value={meta} />
+        <button className='backdrop-filter text-gray-300 backdrop-blur-xl text-center w-min h-full bg-black/70 font-medium outline outline-0 border-2 text-sm mt-3 px-1.5 py-1 rounded-lg border-red-500 [box-shadow:inset_0_0_5px_rgb(0_0_0_/_70%)]' value='' onClick={handlerDelMeta}>Eliminar meta</button>
       </div>
     </div>
   );
